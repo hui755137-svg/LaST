@@ -1,8 +1,8 @@
-# LaST: Main Results Only
+# LaST
 
-Minimal reproduction of the final frozen LaST main results on AIR, CA, and PEMS.
+Official implementation of **Learning Latent State Transitions for Continual Spatio-Temporal Graph Forecasting** on AIR, CA, and PEMS.
 
-The fixed configuration is latent dimension 48, calibrator width 128, graph-propagation rank 32, and nine period-level node-context features. The encoder, latent predictor, and decoder are frozen after the first-period adaptive handoff; later periods update only the Surface Observation Calibrator.
+The configuration uses latent dimension 48, calibrator width 128, graph-propagation rank 32, and nine period-level node-context features. The encoder, latent predictor, and decoder are frozen after the first-period adaptive handoff; later periods update the Surface Observation Calibrator.
 
 ## Data
 
@@ -15,7 +15,7 @@ DATA_ROOT/
   PEMS/{FastData,graph}/
 ```
 
-Only `FastData/*.npz` and `graph/*_adj.npz` are read. Raw data and BenchmarkCache are not required.
+The runner reads `FastData/*.npz` and `graph/*_adj.npz`. Raw data and BenchmarkCache are not required.
 
 ## Run
 
